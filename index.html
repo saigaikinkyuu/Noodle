@@ -5,7 +5,15 @@
 <body>
   <div>
     <p>あなたの初期の状態は：<p id="firstCondition"></p></p>
-    <button onclick="rondom()">最初の状態を決定する</button>
+    <button onclick="rondom()" id="button1">最初の状態を決定する</button>
+    <p>罰ゲーム：<p id="secondCondition"></p></p>
+    <button onclick="rondom2()" id="button2">罰ゲームの決定</button>
+    <p>罰ゲーム1：<p id="punishment1"></p></p>
+    <button onclick="rondom3()" id="button2">罰ゲームの決定</button>
+    <p>罰ゲーム2：<p id="punishment2"></p></p>
+    <button onclick="rondom4()" id="button2">罰ゲームの決定</button>
+    <p>罰ゲーム3：<p id="punishment3"></p></p>
+    <button onclick="rondom5()" id="button2">罰ゲームの決定</button>
   </div>
   <script>
     function getRandomInt(min, max) {
@@ -15,11 +23,68 @@
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       console.log(array[i])
       document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("button1").setAttribute("disabled", "");
     }
     function rondom() {
       var min = 0
       var max = 5
       getRandomInt(min, max)
+    }
+    function getRandomInt2(min, max) {
+      var array = ["罰ゲーム1へ","罰ゲーム2へ","罰ゲーム3へ","1枚脱ぐ","2枚脱ぐ","3枚脱ぐ","1枚着る","2枚着る","上半身着る","M字開脚"]
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      console.log(array[i])
+      document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("button1").setAttribute("disabled", "");
+    }
+    function rondom2() {
+      var min = 0
+      var max = 10
+      getRandomInt2(min, max)
+    }
+    function getRandomInt3(min, max) {
+      var array = ["罰ゲーム2へ","罰ゲーム3へ","全裸になる","乳首責め(1min)","乳首責め(2min)","ローション塗る","半ケツ","2ターントップレス","挙手"]
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      console.log(array[i])
+      document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("button1").setAttribute("disabled", "");
+    }
+    function rondom3() {
+      var min = 0
+      var max = 9
+      getRandomInt3(min, max)
+    }
+    function getRandomInt4(min, max) {
+      var array = ["罰ゲーム3へ","1枚着る","2ターン今の状態","乳房揉む(次罰ゲームまで)","乳首舐める(次罰ゲームまで)","乳房責め(次罰ゲーム終了まで)","手ブラ"]
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      console.log(array[i])
+      document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("button1").setAttribute("disabled", "");
+    }
+    function rondom4() {
+      var min = 0
+      var max = 7
+      getRandomInt4(min, max)
+    }
+    function getRandomInt5(min, max) {
+      var array = ["外へ行く","見せる","+ターン3","+ターン4","検索して最初に出てきた罰ゲームを受ける(「全裸 罰ゲーム」)","乳首責め(ゲーム終了まで)"]
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      console.log(array[i])
+      document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("button1").setAttribute("disabled", "");
+    }
+    function rondom5() {
+      var min = 0
+      var max = 6
+      getRandomInt5(min, max)
     }
   </script>
 </body>
