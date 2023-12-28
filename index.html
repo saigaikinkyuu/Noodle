@@ -5,7 +5,7 @@
 <body>
   <div>
     <p>あなたの初期の状態は：<p id="firstCondition"></p></p>
-    <p>ターン：<p id="firstCondition"></p></p>
+    <p>ターン：<p id="turn"></p></p>
     <button onclick="rondom()" id="button1">最初の状態を決定する</button>
     <p>罰ゲーム：<p id="secondCondition"></p></p>
     <button onclick="rondom2()" id="button2">罰ゲームの決定</button>
@@ -30,7 +30,7 @@
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       console.log(array[i])
-      document.getElementById("firstCondition").textContent = i
+      document.getElementById("turn").textContent = i
       document.getElementById("button1").setAttribute("disabled", "");
     }
     function rondom() {
