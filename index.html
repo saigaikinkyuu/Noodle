@@ -5,6 +5,7 @@
 <body>
   <div>
     <p>あなたの初期の状態は：<p id="firstCondition"></p></p>
+    <p>ターン：<p id="firstCondition"></p></p>
     <button onclick="rondom()" id="button1">最初の状態を決定する</button>
     <p>罰ゲーム：<p id="secondCondition"></p></p>
     <button onclick="rondom2()" id="button2">罰ゲームの決定</button>
@@ -23,12 +24,22 @@
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       console.log(array[i])
       document.getElementById("firstCondition").textContent = array[i]
+    }
+    function getTurn(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      console.log(array[i])
+      document.getElementById("firstCondition").textContent = i
       document.getElementById("button1").setAttribute("disabled", "");
     }
     function rondom() {
       var min = 0
       var max = 5
+      var min2 = 5
+      var max2 = 10
       getRandomInt(min, max)
+      getTurn(min2, max2)
     }
     function getRandomInt2(min, max) {
       var array = ["罰ゲーム1へ","罰ゲーム2へ","罰ゲーム3へ","1枚脱ぐ","2枚脱ぐ","3枚脱ぐ","1枚着る","2枚着る","上半身着る","M字開脚"]
@@ -36,7 +47,7 @@
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       console.log(array[i])
-      document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("secondCondition").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
     }
     function rondom2() {
@@ -50,7 +61,7 @@
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       console.log(array[i])
-      document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("punishment1").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
     }
     function rondom3() {
@@ -64,7 +75,7 @@
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       console.log(array[i])
-      document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("punishment2").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
     }
     function rondom4() {
@@ -78,7 +89,7 @@
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       console.log(array[i])
-      document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("punishment3").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
     }
     function rondom5() {
