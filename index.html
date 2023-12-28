@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <title>罰ゲーム</title>
+</head>
+<body>
+  <div>
+    <p>あなたの初期の状態は：<p id="firstCondition"></p></p>
+    <button onclick="rondom()"></button>
+  </div>
+  <script>
+    function getRandomInt(min, max) {
+      var array = ["トップレス","半裸","パン一","全裸","着衣"]
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      document.getElementById("firstCondition").textContet = array[i]
+    }
+    function rondom() {
+      var min = 1
+      var max = 5
+      getRandomInt(min, max)
+    }
+  </script>
+</body>
+</html>
