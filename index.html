@@ -41,15 +41,19 @@
     }
     function getRandomInt2(min, max) {
       var value = document.getElementById("turn").textContent
+      var value2 = document.getElementById("secondCondition").textContent
       if(value > -1){
       var array = ["罰ゲーム1へ","罰ゲーム2へ","罰ゲーム3へ","1枚脱ぐ","2枚脱ぐ","3枚脱ぐ","1枚着る","2枚着る","上半身着る","M字開脚"]
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-      console.log(array[i])
+        if(value2 === array[i]){
+          rodom2()
+        }else{
       document.getElementById("secondCondition").textContent = array[i]
       document.getElementById("turn").textContent = value-1
       document.getElementById("button1").setAttribute("disabled", "");
+        }
       }
     }
     function rondom2() {
