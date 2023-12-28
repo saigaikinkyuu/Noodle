@@ -46,6 +46,8 @@
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       console.log(array[i])
       document.getElementById("secondCondition").textContent = array[i]
+      var value = document.getElementById("turn").textContent
+      document.getElementById("turn").textContent = value-1
       document.getElementById("button1").setAttribute("disabled", "");
     }
     function rondom2() {
