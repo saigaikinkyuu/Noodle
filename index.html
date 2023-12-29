@@ -123,10 +123,10 @@
       }else if("罰ゲーム3へ" === array[i]){
         document.getElementById("button5").removeAttribute("disabled")
       }else if("+ターン3" === array[i]){
-        var value = document.getElementById("turn").textContent;
+        var value = parseInt(document.getElementById("turn").textContent);
         document.getElementById("turn").textContent = value + 3;
       }else if("+ターン4" === array[i]){
-        var value = document.getElementById("turn").textContent;
+        var value = parseInt(document.getElementById("turn").textContent);
         document.getElementById("turn").textContent = value + 4;
       }
       document.getElementById("punishment3").textContent = array[i]
