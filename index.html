@@ -193,6 +193,19 @@
       var max = 6
       getRandomInt5(min, max)
     }
+    function getRandomInt6(min, max) {
+      var array = ["外に行く(トップレス)","外に行く(パン一)","外に行く(-1)","トップレス","見せる(トップレス)","全裸(17℃)","2回やる"]
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      document.getElementById("punishment4").textContent = array[i]
+      document.getElementById("button1").setAttribute("disabled", "");
+    }
+    function rondom6() {
+      var min = 0
+      var max = 6
+      getRandomInt5(min, max)
+    }
   </script>
 </body>
 </html>
