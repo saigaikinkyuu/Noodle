@@ -22,6 +22,7 @@
       var array = ["トップレス","半裸","パン一","全裸","着衣"]
       min = Math.ceil(min);
       max = Math.floor(max);
+      var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       if(array[i] === "トップレス"){
         var clothe = 2
       }else if(array[i] === "半裸"){
@@ -33,7 +34,6 @@
       }else if(array[i] === "着衣"){
         var clothe = 3
       }
-      var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       document.getElementById("firstCondition").textContent = array[i]
       document.getElementById("clothe").textContent = clothe
     }
@@ -73,17 +73,17 @@
             document.getElementById("button4").removeAttribute("disabled")
           }else if("罰ゲーム3へ" === array[i]){
             document.getElementById("button5").removeAttribute("disabled")
-          }else if{"1枚脱ぐ" === array[i]}{
+          }else if("1枚脱ぐ" === array[i]){
             document.getElementById("clothe").textContent = parseInt(clothe)-1
-          }else if{"2枚脱ぐ" === array[i]}{
+          }else if("2枚脱ぐ" === array[i]){
             document.getElementById("clothe").textContent = parseInt(clothe)-2
-          }else if{"3枚脱ぐ" === array[i]}{
+          }else if("3枚脱ぐ" === array[i]){
             document.getElementById("clothe").textContent = parseInt(clothe)-3
-          }else if{"1枚着る" === array[i]}{
+          }else if("1枚着る" === array[i]){
             document.getElementById("clothe").textContent = parseInt(clothe)+1
-          }else if{"2枚着る" === array[i]}{
+          }else if("2枚着る" === array[i]){
             document.getElementById("clothe").textContent = parseInt(clothe)+2
-          }else if{"上半身着る" === array[i]}{
+          }else if("上半身着る" === array[i]){
             document.getElementById("clothe").textContent = parseInt(clothe)+1
           }
           if(document.getElementById("clothe").textContent < 0){
