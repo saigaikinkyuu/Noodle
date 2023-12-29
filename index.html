@@ -42,6 +42,9 @@
     function getRandomInt2(min, max) {
       var value = document.getElementById("turn").textContent
       var value2 = document.getElementById("secondCondition").textContent
+      document.getElementById("button3").setAttribute("disabled", "");
+      document.getElementById("button4").setAttribute("disabled", "");
+      document.getElementById("button5").setAttribute("disabled", "");
       if(value > 0){
       var array = ["罰ゲーム1へ","罰ゲーム2へ","罰ゲーム3へ","1枚脱ぐ","2枚脱ぐ","3枚脱ぐ","1枚着る","2枚着る","上半身着る","M字開脚"]
       min = Math.ceil(min);
@@ -50,9 +53,6 @@
         if(value2 === array[i]){
           rodom2()
         }else{
-        document.getElementById("button3").setAttribute("disabled", "");
-        document.getElementById("button4").setAttribute("disabled", "");
-        document.getElementById("button5").setAttribute("disabled", "");
           if("罰ゲーム1へ" === array[i]){
             document.getElementById("button3").removeAttribute("disabled")
           }else if("罰ゲーム2へ" === array[i]){
@@ -68,7 +68,7 @@
     }
     function rondom2() {
       var min = 0
-      var max = 3
+      var max = 10
       getRandomInt2(min, max)
     }
     function getRandomInt3(min, max) {
@@ -122,6 +122,12 @@
         document.getElementById("button4").removeAttribute("disabled")
       }else if("罰ゲーム3へ" === array[i]){
         document.getElementById("button5").removeAttribute("disabled")
+      }else if("+ターン3" === array[i]){
+        var value = document.getElementById("turn").textContent;
+        document.getElementById("turn").textContent = value + 3;
+      }else if("+ターン4" === array[i]){
+        var value = document.getElementById("turn").textContent;
+        document.getElementById("turn").textContent = value + 4;
       }
       document.getElementById("punishment3").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
