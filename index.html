@@ -6,6 +6,7 @@
   <div>
     <p>あなたの初期の状態は：<p id="firstCondition"></p></p>
     <p>ターン：<p id="turn"></p></p>
+    <p>着服の枚数：<p id="clothe"></p></p>
     <button onclick="rondom()" id="button1">最初の状態を決定する</button>
     <p>罰ゲーム：<p id="secondCondition"></p></p>
     <button onclick="rondom2()" id="button2">罰ゲームの決定</button>
@@ -21,8 +22,20 @@
       var array = ["トップレス","半裸","パン一","全裸","着衣"]
       min = Math.ceil(min);
       max = Math.floor(max);
+      if(array[i] === "トップレス"){
+        var clothe = 2
+      }else if(array[i] === "半裸"){
+        var clothe = 1
+      }else if(array[i] === "パン一"){
+        var clothe = 1
+      }else if(array[i] === "全裸"){
+        var clothe = 0
+      }else if(array[i] === "着衣"){
+        var clothe = 3
+      }
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       document.getElementById("firstCondition").textContent = array[i]
+      document.getElementById("clothe").textContent = clothe
     }
     function getTurn(min, max) {
       min = Math.ceil(min);
@@ -41,6 +54,7 @@
     }
     function getRandomInt2(min, max) {
       var value = document.getElementById("turn").textContent
+      var clothe = document.getElementById("clothe").textContent
       var value2 = document.getElementById("secondCondition").textContent
       document.getElementById("button3").setAttribute("disabled", "");
       document.getElementById("button4").setAttribute("disabled", "");
@@ -59,6 +73,21 @@
             document.getElementById("button4").removeAttribute("disabled")
           }else if("罰ゲーム3へ" === array[i]){
             document.getElementById("button5").removeAttribute("disabled")
+          }else if{"1枚脱ぐ" === array[i]}{
+            document.getElementById("clothe").textContent = parseInt(clothe)-1
+          }else if{"2枚脱ぐ" === array[i]}{
+            document.getElementById("clothe").textContent = parseInt(clothe)-2
+          }else if{"3枚脱ぐ" === array[i]}{
+            document.getElementById("clothe").textContent = parseInt(clothe)-3
+          }else if{"1枚着る" === array[i]}{
+            document.getElementById("clothe").textContent = parseInt(clothe)+1
+          }else if{"2枚着る" === array[i]}{
+            document.getElementById("clothe").textContent = parseInt(clothe)+2
+          }else if{"上半身着る" === array[i]}{
+            document.getElementById("clothe").textContent = parseInt(clothe)+1
+          }
+          if(document.getElementById("clothe").textContent < 0){
+            document.getElementById("button6").removeAttribute("disabled")
           }
       document.getElementById("secondCondition").textContent = array[i]
       document.getElementById("turn").textContent = value-1
@@ -82,6 +111,12 @@
         document.getElementById("button4").removeAttribute("disabled")
       }else if("罰ゲーム3へ" === array[i]){
         document.getElementById("button5").removeAttribute("disabled")
+      }else if("全裸になる" === array[i]){
+      if(document.getElementById("clothe").textContent < 0){
+        document.getElementById("button6").removeAttribute("disabled")
+      }else{
+        document.getElementById("clothe").textContent = 0
+      }
       }
       document.getElementById("punishment1").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
@@ -102,9 +137,9 @@
         document.getElementById("button4").removeAttribute("disabled")
       }else if("罰ゲーム3へ" === array[i]){
         document.getElementById("button5").removeAttribute("disabled")
+      }else if("1枚着る" === array[i]){
+        document.getElementById("clothe").textContent = parseInt(document.getElementById("clothe").textContent)+1
       }
-      document.getElementById("punishment2").textContent = array[i]
-      document.getElementById("button1").setAttribute("disabled", "");
     }
     function rondom4() {
       var min = 0
@@ -112,25 +147,43 @@
       getRandomInt4(min, max)
     }
     function getRandomInt5(min, max) {
-      var array = ["外へ行く","見せる","+ターン3","+ターン4","検索して最初に出てきた罰ゲームを受ける(「全裸 罰ゲーム」)","乳首責め(ゲーム終了まで)"]
+      var array = ["外へ行く","見せる","+ターン3","+ターン4","検索して最初に出てきた罰ゲームを受ける(「","乳首責め(ゲーム終了まで)"]
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       if("罰ゲーム1へ" === array[i]){
         document.getElementById("button3").removeAttribute("disabled")
+        document.getElementById("punishment3").textContent = array[i]
+        document.getElementById("button1").setAttribute("disabled", "");
       }else if("罰ゲーム2へ" === array[i]){
         document.getElementById("button4").removeAttribute("disabled")
+        document.getElementById("punishment3").textContent = array[i]
+        document.getElementById("button1").setAttribute("disabled", "");
       }else if("罰ゲーム3へ" === array[i]){
         document.getElementById("button5").removeAttribute("disabled")
+        document.getElementById("punishment3").textContent = array[i]
+        document.getElementById("button1").setAttribute("disabled", "");
       }else if("+ターン3" === array[i]){
         var value = parseInt(document.getElementById("turn").textContent);
         document.getElementById("turn").textContent = value + 3;
+        document.getElementById("punishment3").textContent = array[i]
+        document.getElementById("button1").setAttribute("disabled", "");
       }else if("+ターン4" === array[i]){
         var value = parseInt(document.getElementById("turn").textContent);
         document.getElementById("turn").textContent = value + 4;
-      }
+        document.getElementById("punishment3").textContent = array[i]
+        document.getElementById("button1").setAttribute("disabled", "");
+      }else if("検索して最初に出てきた罰ゲームを受ける(「" === array[i]){
+        array2 = ["全裸","トップレス","レズ エロ","全裸 罰ゲーム","トップレス 罰ゲーム","レズ 尋問 エロ","羞恥 露出","拷問 全裸","全裸 乳首 罰","裸 羞恥 尋問"]
+        min = Math.ceil(min);
+        max = Math.floor(max+4);
+        var n = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+        document.getElementById("punishment3").textContent = array[i] + array2[n] + "」)"
+        document.getElementById("button1").setAttribute("disabled", "");
+      }else{
       document.getElementById("punishment3").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
+      }
     }
     function rondom5() {
       var min = 0
