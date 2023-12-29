@@ -43,7 +43,7 @@
       var value = document.getElementById("turn").textContent
       var value2 = document.getElementById("secondCondition").textContent
       if(value > 0){
-      var array = ["罰ゲーム1へ","罰ゲーム2へ","罰ゲーム3へ"]
+      var array = ["罰ゲーム1へ","罰ゲーム2へ","罰ゲーム3へ","1枚脱ぐ","2枚脱ぐ","3枚脱ぐ","1枚着る","2枚着る","上半身着る","M字開脚"]
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
@@ -68,7 +68,7 @@
     }
     function rondom2() {
       var min = 0
-      var max = 10
+      var max = 3
       getRandomInt2(min, max)
     }
     function getRandomInt3(min, max) {
