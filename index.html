@@ -10,11 +10,11 @@
     <p>罰ゲーム：<p id="secondCondition"></p></p>
     <button onclick="rondom2()" id="button2">罰ゲームの決定</button>
     <p>罰ゲーム1：<p id="punishment1"></p></p>
-    <button onclick="rondom3()" id="button2">罰ゲームの決定</button>
+    <button onclick="rondom3()" id="button3">罰ゲームの決定</button>
     <p>罰ゲーム2：<p id="punishment2"></p></p>
-    <button onclick="rondom4()" id="button2">罰ゲームの決定</button>
+    <button onclick="rondom4()" id="button4">罰ゲームの決定</button>
     <p>罰ゲーム3：<p id="punishment3"></p></p>
-    <button onclick="rondom5()" id="button2">罰ゲームの決定</button>
+    <button onclick="rondom5()" id="button5">罰ゲームの決定</button>
   </div>
   <script>
     function getRandomInt(min, max) {
@@ -50,9 +50,19 @@
         if(value2 === array[i]){
           rodom2()
         }else{
+          if("罰ゲーム1へ" === array[i]){
+            document.getElementById("button3").removeAttribute(disabled)
+          }else if("罰ゲーム2へ" === array[i]){
+            document.getElementById("button4").removeAttribute(disabled)
+          }else if("罰ゲーム3へ" === array[i]){
+            document.getElementById("button5").removeAttribute(disabled)
+          }
       document.getElementById("secondCondition").textContent = array[i]
       document.getElementById("turn").textContent = value-1
       document.getElementById("button1").setAttribute("disabled", "");
+      document.getElementById("button3").setAttribute("disabled", "");
+      document.getElementById("button4").setAttribute("disabled", "");
+      document.getElementById("button5").setAttribute("disabled", "");
         }
       }
     }
@@ -66,7 +76,13 @@
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-      console.log(array[i])
+      if("罰ゲーム1へ" === array[i]){
+        document.getElementById("button3").removeAttribute(disabled)
+      }else if("罰ゲーム2へ" === array[i]){
+        document.getElementById("button4").removeAttribute(disabled)
+      }else if("罰ゲーム3へ" === array[i]){
+        document.getElementById("button5").removeAttribute(disabled)
+      }
       document.getElementById("punishment1").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
     }
@@ -80,7 +96,13 @@
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-      console.log(array[i])
+      if("罰ゲーム1へ" === array[i]){
+        document.getElementById("button3").removeAttribute(disabled)
+      }else if("罰ゲーム2へ" === array[i]){
+        document.getElementById("button4").removeAttribute(disabled)
+      }else if("罰ゲーム3へ" === array[i]){
+        document.getElementById("button5").removeAttribute(disabled)
+      }
       document.getElementById("punishment2").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
     }
@@ -94,7 +116,13 @@
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-      console.log(array[i])
+      if("罰ゲーム1へ" === array[i]){
+        document.getElementById("button3").removeAttribute(disabled)
+      }else if("罰ゲーム2へ" === array[i]){
+        document.getElementById("button4").removeAttribute(disabled)
+      }else if("罰ゲーム3へ" === array[i]){
+        document.getElementById("button5").removeAttribute(disabled)
+      }
       document.getElementById("punishment3").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
     }
