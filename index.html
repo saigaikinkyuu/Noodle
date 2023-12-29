@@ -198,6 +198,9 @@
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      if(array[i] === "トップレス"){
+        document.getElementById("turn").textContent = 2
+      }
       document.getElementById("punishment4").textContent = array[i]
       document.getElementById("button1").setAttribute("disabled", "");
     }
