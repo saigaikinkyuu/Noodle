@@ -50,6 +50,9 @@
         if(value2 === array[i]){
           rodom2()
         }else{
+        document.getElementById("button3").setAttribute("disabled", "");
+        document.getElementById("button4").setAttribute("disabled", "");
+        document.getElementById("button5").setAttribute("disabled", "");
           if("罰ゲーム1へ" === array[i]){
             document.getElementById("button3").removeAttribute("disabled")
           }else if("罰ゲーム2へ" === array[i]){
@@ -60,9 +63,6 @@
       document.getElementById("secondCondition").textContent = array[i]
       document.getElementById("turn").textContent = value-1
       document.getElementById("button1").setAttribute("disabled", "");
-      document.getElementById("button3").setAttribute("disabled", "");
-      document.getElementById("button4").setAttribute("disabled", "");
-      document.getElementById("button5").setAttribute("disabled", "");
         }
       }
     }
