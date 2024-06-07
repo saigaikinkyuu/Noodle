@@ -62,7 +62,7 @@
       document.getElementById("button4").setAttribute("disabled", "");
       document.getElementById("button5").setAttribute("disabled", "");
       if(value > 0){
-      var array = ["罰ゲーム1へ","罰ゲーム2へ","罰ゲーム3へ","1枚脱ぐ","2枚脱ぐ","3枚脱ぐ","1枚着る","2枚着る","上半身着る","M字開脚"]
+      var array = ["罰ゲーム1へ","罰ゲーム2へ","罰ゲーム3へ","1枚脱ぐ","2枚脱ぐ","3枚脱ぐ","1枚着る","1枚脱ぐ","罰ゲーム2へ","M字開脚"]
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
@@ -103,7 +103,7 @@
       getRandomInt2(min, max)
     }
     function getRandomInt3(min, max) {
-      var array = ["罰ゲーム2へ","罰ゲーム3へ","全裸になる","乳首責め(1min)","乳首責め(2min)","ローション塗る","半ケツ","2ターントップレス","挙手"]
+      var array = ["罰ゲーム2へ","罰ゲーム3へ","全裸になる","乳首責め(1min)","乳首責め(2min)","セクシーポーズをする","片手ぶら","もう1回","挙手"]
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
@@ -129,7 +129,7 @@
       getRandomInt3(min, max)
     }
     function getRandomInt4(min, max) {
-      var array = ["罰ゲーム3へ","1枚着る","2ターン今の状態","乳房揉む(次罰ゲームまで)","乳首舐める(次罰ゲームまで)","乳房責め(次罰ゲーム終了まで)","手ブラ"]
+      var array = ["罰ゲーム3へ","1枚脱ぐ","10ターン追加","乳房揉む(次罰ゲームまで)","乳首舐める(次罰ゲームまで)","乳房責め(次罰ゲーム終了まで)","もう1回"]
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
@@ -139,8 +139,11 @@
         document.getElementById("button4").removeAttribute("disabled")
       }else if("罰ゲーム3へ" === array[i]){
         document.getElementById("button5").removeAttribute("disabled")
-      }else if("1枚着る" === array[i]){
-        document.getElementById("clothe").textContent = parseInt(document.getElementById("clothe").textContent)+1
+      }else if("1枚脱ぐ" === array[i]){
+        document.getElementById("clothe").textContent = parseInt(document.getElementById("clothe").textContent)-1
+      }else if("10ターン追加" === array[i]){
+        var value = parseInt(document.getElementById("turn").textContent);
+        document.getElementById("turn").textContent = value + 10;
       }
       document.getElementById("punishment2").textContent = array[i]
     }
@@ -181,7 +184,10 @@
         min = Math.ceil(min);
         max = Math.floor(max+4);
         var n = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-        document.getElementById("punishment3").textContent = array[i] + array2[n] + "」)"
+        min = Math.ceil(min);
+        max = Math.floor(max+4);
+        var m = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+        document.getElementById("punishment3").textContent = "検索して" + m + "個目に出てきた罰ゲームを受ける(「" + array2[n] + "」)"
         document.getElementById("button1").setAttribute("disabled", "");
       }else{
       document.getElementById("punishment3").textContent = array[i]
@@ -197,7 +203,7 @@
       if(document.getElementById("clothe").textContent < 0){
         document.getElementById("clothe").textContent = 0
       }
-      var array = ["外A(トップレス)[乳首責め]","外A(トップレス)[乳房揉む]","外A(トップレス)[手ぶら]","外A(トップレス)[自由]","外A(トップレス+半ケツ)[乳首責め]","外A(トップレス+半ケツ)[乳房揉む]","外A(トップレス+半ケツ)[手ぶら]","外A(トップレス+半ケツ)[自由]","外A(パン一)[乳首責め]","外A(パン一)[乳房揉む]","外A(パン一)[手ぶら]","外A(パン一)[自由]","外B(トップレス)[乳首責め]","外B(トップレス)[乳房揉む]","外B(トップレス)[手ぶら]","外B(トップレス)[自由]","外B(トップレス+半ケツ)[乳首責め]","外B(トップレス+半ケツ)[乳房揉む]","外B(トップレス+半ケツ)[手ぶら]","外B(トップレス+半ケツ)[自由]","外B(パン一)[乳首責め]","外B(パン一)[乳房揉む]","外B(パン一)[手ぶら]","外B(パン一)[自由]"]
+      var array = ["外A(トップレス)[乳首責め]","外A(トップレス)[乳房揉む]","外A(トップレス)[手ぶら]","外A(トップレス)[自由]","外A(トップレス+半ケツ)[乳首責め]","外A(トップレス+半ケツ)[乳房揉む]","外A(トップレス+半ケツ)[手ぶら]","外A(トップレス+半ケツ)[自由]","外A(トップレス)[セクシーポーズ]","外A(トップレス)[恥ずかしいことを10個やる]","外A(トップレス+半ケツ)[セクシーポーズ]","外A(トップレス+半ケツ)[恥ずかしいことを10個やる]","外B(トップレス)[乳首責め]","外B(トップレス)[乳房揉む]","外B(トップレス)[手ぶら]","外B(トップレス)[自由]","外B(トップレス+半ケツ)[乳首責め]","外B(トップレス+半ケツ)[乳房揉む]","外B(トップレス+半ケツ)[手ぶら]","外B(トップレス+半ケツ)[自由]","外B(パン一)[乳首責め]","外B(パン一)[乳房揉む]","外B(パン一)[手ぶら]","外B(パン一)[自由]"]
       min = Math.ceil(min);
       max = Math.floor(max);
       var i = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
